@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Drift</title>
+    <link rel="stylesheet" href="buttons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="instruction">
+        <div id="dInstruction" class="instructionPrompt">
+            <p>
+                Press space bar to apply thrust and move the Rocket to reach the Earth. Use fuel efficiently.<br>
+                <p id="fuelInstruction">Green bar at the top indicates the fuel left</p><br>
+                <span>Hint </span> Use planets gravity and orbital revolution wisely and apply thrust at the precise point. 
+            </p>
+            <button onclick="hideDInstruction()">Got it</button>
+        </div>
+        <div id="mInstruction" class="instructionPrompt">
+            <p>
+                Tap on Screen to apply thrust and move the Rocket to reach the Earth. Use fuel efficiently.<br>
+                <p id="fuelInstruction">Green bar at the top indicates the fuel left</p><br>
+                <span>Hint </span> Use planets gravity and orbital revolution wisely and apply thrust at the precise point. Tap continuously to move faster.
+            </p>
+            <button onclick="hideDInstruction()">Got it</button>
+        </div>
+    </div>
+    <div class="loading">
+        <div class="title"></div>
+        <div class="loading-text">
+            <span class="loading-text-words">L</span>
+            <span class="loading-text-words">O</span>
+            <span class="loading-text-words">A</span>
+            <span class="loading-text-words">D</span>
+            <span class="loading-text-words">I</span>
+            <span class="loading-text-words">N</span>
+            <span class="loading-text-words">G</span>
+        </div>
+    </div>
+    <div class="game">
+        <canvas id="gameCanvas" width="1000" height="600"></canvas>
+    </div>
+    <div class="gameOver">
+        <div id="gameOver" class="prompt">
+            <p>You Crashed</p>
+            <div class="buttons">
+                <button onclick="reload()">Play Again</button>
+                <button>Exit</button>
+            </div>
+        </div>
+        <div id="won" class="prompt">
+            <p>You Reached Earth!!</p>
+            <div class="buttons">
+                <button onclick="reload()">Play Again</button>
+                <button>Exit</button>
+            </div>
+        </div>
+        <div id="lowFuel" class="prompt">
+            <p>You Ran out of fuel</p>
+            <div class="buttons">
+                <button onclick="reload()">Play Again</button>
+                <button>Exit</button>
+            </div>
+        </div>
+        <div id="lostInSpace" class="prompt">
+            <p>You Lost in Space</p>
+            <div class="buttons">
+                <button onclick="reload()">Play Again</button>
+                <button>Exit</button>
+            </div>
+        </div>
+    </div>
+    <div class="controls">
+    </div>
+</body>
+<script src="script.js"></script>
+<script src="buttons.js"></script>
+
+</html>

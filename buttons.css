@@ -1,0 +1,30 @@
+
+.buttons {
+    position: relative;
+    display: flex;
+    gap: 2rem;
+    top: 30vh;
+  }
+  
+  .buttons button {
+    border-radius: 20px;
+    padding: 8px;
+    width: 158px;
+    height: max-content;
+    border: none;
+    cursor: pointer;
+    color: #000;
+    font-weight: bold;
+  }
+  
+  .buttons button:nth-child(1):hover {
+    box-shadow: 0 0 4px 4px #02db02;
+    background-image: radial-gradient(white, #e5cfcf, #02db02);
+  }
+  
+  .buttons button:nth-child(2):hover {
+    box-shadow: 0 0 4px 4px #ff3700;
+    background-image: radial-gradient(white, #e5cfcf, #ff3700);
+  }
+  
+

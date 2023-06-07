@@ -1,0 +1,301 @@
+@import url(https://fonts.googleapis.com/css?family=Quattrocento+Sans);
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+
+* {
+  font-family: 'DM Sans', sans-serif;
+}
+
+body {
+  background-color: black;
+  color: aliceblue;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.game {
+  height: 100%;
+  filter: blur(20px);
+}
+
+.game,
+.controls {
+  display: flex;
+  justify-content: center;
+}
+
+#gameCanvas {
+  width: 97%;
+  height: 100%;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url("./loadingBackground.png");
+  background-position: center;
+}
+
+.title {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 20%;
+  text-align: center;
+  width: 100%;
+  height: 100px;
+  background-image: url('./title.png');
+  width: 60%;
+  height: auto;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.loading-text {
+  position: absolute;
+  /* top: 0; */
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  width: 100%;
+  height: 100px;
+  line-height: 100px;
+}
+
+.loading-text span {
+  display: inline-block;
+  margin: 0 5px;
+  color: #fff;
+  font-family: "Quattrocento Sans", sans-serif;
+}
+
+.loading-text span:nth-child(1) {
+  filter: blur(0px);
+  -webkit-animation: blur-text 1.5s 0s infinite linear alternate;
+  animation: blur-text 1.5s 0s infinite linear alternate;
+}
+
+.loading-text span:nth-child(2) {
+  filter: blur(0px);
+  -webkit-animation: blur-text 1.5s 0.2s infinite linear alternate;
+  animation: blur-text 1.5s 0.2s infinite linear alternate;
+}
+
+.loading-text span:nth-child(3) {
+  filter: blur(0px);
+  -webkit-animation: blur-text 1.5s 0.4s infinite linear alternate;
+  animation: blur-text 1.5s 0.4s infinite linear alternate;
+}
+
+.loading-text span:nth-child(4) {
+  filter: blur(0px);
+  -webkit-animation: blur-text 1.5s 0.6s infinite linear alternate;
+  animation: blur-text 1.5s 0.6s infinite linear alternate;
+}
+
+.loading-text span:nth-child(5) {
+  filter: blur(0px);
+  -webkit-animation: blur-text 1.5s 0.8s infinite linear alternate;
+  animation: blur-text 1.5s 0.8s infinite linear alternate;
+}
+
+.loading-text span:nth-child(6) {
+  filter: blur(0px);
+  -webkit-animation: blur-text 1.5s 1s infinite linear alternate;
+  animation: blur-text 1.5s 1s infinite linear alternate;
+}
+
+.loading-text span:nth-child(7) {
+  filter: blur(0px);
+  -webkit-animation: blur-text 1.5s 1.2s infinite linear alternate;
+  animation: blur-text 1.5s 1.2s infinite linear alternate;
+}
+
+@-webkit-keyframes blur-text {
+  0% {
+    filter: blur(0px);
+  }
+
+  100% {
+    filter: blur(4px);
+  }
+}
+
+@keyframes blur-text {
+  0% {
+    filter: blur(0px);
+  }
+
+  100% {
+    filter: blur(4px);
+  }
+}
+
+.gameOver {
+  display: flex;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.gameOver div p {  
+  position: absolute;
+  top: 20%;
+  font-size: large;
+  font-family: DM-Sans;
+  font-weight: bold;
+  color: #b5b4b3;
+}
+
+.prompt {
+  background-color: #1b1614;
+  width: 450px;
+  height: 450px;
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.instruction {
+  position: absolute;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.instructionPrompt {
+  z-index: 2;
+  border: 1px solid;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 35%;
+  height: min-content;
+  padding: 20px;
+  backdrop-filter: blur(30px);
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.instructionPrompt p {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.instructionPrompt span {
+  color: red;
+  font-weight: bold;
+}
+
+.instructionPrompt button {
+  color: white;
+  width: 100px;
+  border-radius: 10px;
+  background-color: rgb(28, 28, 28);
+}
+
+#fuelInstruction {
+  margin: 0;
+  color: limegreen;
+}
+
+#mInstruction {
+  width: 80%;
+  display: none;
+}
+
+#lostInSpace {
+  background-image: url('./lostInSpace.png');
+  /* display: flex; */
+  background-size: contain;
+}
+
+#gameOver {
+  background-image: url('./hitByAsteroid.png');
+  /* display: flex; */
+  background-size: contain;
+}
+
+#lowFuel {
+  background-image: url('./lowFuel.png');
+  /* display: flex; */
+  background-size: contain;
+}
+
+#won {
+  background-image: url('./won.png');
+  /* display: flex; */
+  background-size: contain;
+}
+
+@media screen and (max-width: 1360px) {
+  .buttons {
+    top: 36vh;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .title {
+    background-size: 140%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .prompt {
+    width: 350px;
+    height: 350px;
+  }
+
+  .buttons {
+    top: 28vh;
+  }
+
+  #dInstruction {
+    display: none;
+  }
+
+  #mInstruction {
+    display: flex;
+  }
+
+  .title {
+    background-size: 140% auto;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .prompt {
+    width: 250px;
+    height: 250px;
+  }
+
+  .buttons button {
+    width: 109px;
+  }
+
+  .buttons {
+    top: 20vh;
+  }
+}
